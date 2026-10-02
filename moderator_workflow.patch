@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/moderator.yml b/.github/workflows/moderator.yml
+index 939680686cd9e140f3d50e77acfe7e0adb6e285c..new
+--- a/.github/workflows/moderator.yml
++++ b/.github/workflows/moderator.yml
+@@ -156,6 +156,7 @@ jobs:
+       - name: Detect spam or low-quality content
+         id: ai
+         if: steps.allow.outputs.skip != 'true'
+         uses: actions/ai-inference@v1
++        continue-on-error: true
+         with:
+           model: openai/gpt-4o-mini
+           system-prompt: |
